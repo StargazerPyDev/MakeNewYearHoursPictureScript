@@ -6,6 +6,12 @@ from PIL import ImageDraw
 WIDTH = 1000
 HEIGHT = 1000
 
+img = Image.new(mode='RGB', size=(WIDTH, HEIGHT))
+img1 = Image.open('resources/tree.png')
+
+img.paste(img1, (244, 244))
+img.save('resources/image.jpg')
+
 
 def make_image():
     font = ImageFont.truetype('resources/font.ttf', size=50, encoding='UTF-8')
@@ -33,9 +39,5 @@ def make_image():
 
     img.save('result.jpg')
 
-# img = Image.new(mode='RGB', size=(WIDTH, HEIGHT))
-# img1 = Image.open('tree.png')
 
-# img.paste(img1, (244, 244))
-# img.save('image.jpg')
-# img.show()
+make_image()
